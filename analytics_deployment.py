@@ -1,9 +1,12 @@
 import streamlit as st
 import pandas as pd
 import numpy as np
-import joblib
+import pickle
+with open('my_pipeline.pkl', 'rb') as file:
+    pipeline = pickle.load(file)
 
-pipeline = joblib.load('advert_pipeline.joblib')
+
+#pipeline = joblib.load('advert_pipeline.joblib')
 
 def take_user_input():
     st.title('Advert Sales Analytics Prediction App')
